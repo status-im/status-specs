@@ -62,7 +62,7 @@ A QR code serves two purposes simultaneously -
 identity verification and initial key material retrieval;
 1. **Asynchronous initial key exchange**
 
-For more information on account generation and trust establishment, see [65/ACCOUNT-ADDRESS](../65/account-address.md)
+For more information on account generation and trust establishment, see [65/STATUS-ACCOUNT-ADDRESS](../65/account-address.md)
 
 ### Post Negotiation
 
