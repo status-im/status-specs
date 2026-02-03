@@ -76,7 +76,7 @@ A QR code serves two purposes simultaneously -
 identity verification and initial key material retrieval;
 1. **Asynchronous initial key exchange**
 
-For more information on account generation and trust establishment, see [65/ACCOUNT-ADDRESS](../65/account-address.md)
+For more information on account generation and trust establishment, see [65/STATUS-ACCOUNT-ADDRESS](../65/account-address.md)
 
 ### Post Negotiation
 
@@ -279,7 +279,7 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 1. [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
 2. [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md)
-3. [65/STATUS-ACCOUNT](../65/account-address.md)
+3. [65/STATUS-ACCOUNT-ADDRESS](../65/account-address.md)
 4. [54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md)
 5. [WAKU2-NOISE-SESSIONS](https://github.com/waku-org/specs/blob/master/standards/application/noise-sessions.md)
 6. [56/STATUS-COMMUNITIES](../56/communities.md)
