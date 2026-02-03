@@ -1,25 +1,14 @@
-# WAKU-MAILSERVER
-
-| Field | Value |
-| --- | --- |
-| Name | Waku Mailserver |
-| Slug | 118 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Adam Babik <adam@status.im>, Oskar Thorén <oskar@status.im>, Samuel Hawksby-Robinson <samuel@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/waku-mailserver.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/waku-mailserver.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/waku-mailserver.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/waku-mailserver.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/waku-mailserver.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/waku-mailserver.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: WAKU-MAILSERVER
+name: Waku Mailserver
+status: deprecated
+description: Waku Mailserver is a specification that allows messages to be stored permanently and to allow the stored messages to be delivered to requesting client nodes, regardless if the messages are not available in the network due to the message TTL expiring.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+  - Adam Babik <adam@status.im>
+  - Oskar Thorén <oskar@status.im>
+  - Samuel Hawksby-Robinson <samuel@status.im>
+---
 
 ## Abstract
 
@@ -136,7 +125,7 @@ the recipient is vulnerable to DoS attacks from a malicious `Mailserver` node.
 Released [May 22, 2020](https://github.com/status-im/specs/commit/664dd1c9df6ad409e4c007fefc8c8945b8d324e8)
 
 * Created document
-* Forked from [whisper-mailserver](/archived/status/deprecated/whisper-mailserver.md)
+* Forked from [whisper-mailserver](whisper-mailserver.md)
 * Change to keep `Mailserver` term consistent
 * Replaced Whisper references with Waku
 

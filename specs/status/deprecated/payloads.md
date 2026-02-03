@@ -1,26 +1,14 @@
-# PAYLOADS
-
-| Field | Value |
-| --- | --- |
-| Name | Payloads |
-| Slug | 121 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Adam Babik <adam@status.im>, Andrea Maria Piana <andreap@status.im>, Oskar Thorén <oskar@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/payloads.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/deprecated/payloads.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/payloads.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/payloads.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/payloads.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/payloads.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/payloads.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: PAYLOADS
+name: Payloads
+status: deprecated
+description: Payload of messages in Status, regarding chat and chat-related use cases.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+- Adam Babik <adam@status.im>
+- Andrea Maria Piana <andreap@status.im>
+- Oskar Thorén <oskar@status.im>
+---
 
 ## Abstract
 
@@ -175,14 +163,14 @@ There are other content types that MAY be implemented by the client:
 
 ##### Mentions
 
-A mention MUST be represented as a string with the `@0xpk` format, where `pk` is the public key of the [user account](/archived/status/deprecated/account.md) to be mentioned,
+A mention MUST be represented as a string with the `@0xpk` format, where `pk` is the public key of the [user account](account.md) to be mentioned,
 within the `text` field of a message with content_type `TEXT_PLAIN`.
 A message MAY contain more than one mention.
 This specification RECOMMENDs that the application does not require the user to enter the entire pk.
 This specification RECOMMENDs that the application allows the user to create a mention
 by typing @ followed by the related ENS or 3-word pseudonym.
 This specification RECOMMENDs that the application provides the user auto-completion functionality to create a mention.
-For better user experience, the client SHOULD display a known [ens name or the 3-word pseudonym corresponding to the key](/archived/status/deprecated/account.md#contact-verification) instead of the `pk`.
+For better user experience, the client SHOULD display a known [ens name or the 3-word pseudonym corresponding to the key](account.md#contact-verification) instead of the `pk`.
 
 ##### Sticker content type
 
@@ -200,8 +188,8 @@ message StickerMessage {
 
 A node requires message types to decide how to encrypt a particular message
 and what metadata needs to be attached when passing a message to the transport layer.
-For more on this, see [WHISPER-USAGE](/archived/status/deprecated/whisper-usage.md)
-and [WAKU-USAGE](/archived/status/deprecated/waku-usage.md).
+For more on this, see [WHISPER-USAGE](whisper-usage.md)
+and [WAKU-USAGE](waku-usage.md).
 
 <!-- TODO: This reference is a bit odd, considering the layer payloads should interact with is Secure Transport, and not Whisper/Waku. This requires more detail -->
 
@@ -361,7 +349,7 @@ Payload
 ### MembershipUpdateMessage and MembershipUpdateEvent
 
 `MembershipUpdateEvent` is a message used to propagate information about group membership changes in a group chat.
-The details are in the [Group chats specs](/archived/status/deprecated/group-chat.md).
+The details are in the [Group chats specs](group-chat.md).
 
 ## Upgradability
 
@@ -389,10 +377,10 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 [Status Whitepaper](https://status.im/whitepaper.pdf)  
 [protobuf record](https://developers.google.com/protocol-buffers/)  
 [Protobuf](https://developers.google.com/protocol-buffers)  
-[Status user account](/archived/status/deprecated/account.md)  
+[Status user account](account.md)  
 [ens name or the 3-word pseudonym corresponding to the key](account.md#contact-verification)  
-[WHISPER-USAGE](/archived/status/deprecated/whisper-usage.md)  
-[WAKU-USAGE](/archived/status/deprecated/waku-usage.md)  
+[WHISPER-USAGE](whisper-usage.md)  
+[WAKU-USAGE](waku-usage.md)  
 [Lamport timestamps](https://en.wikipedia.org/wiki/Lamport_timestamps)  
-[Group chats specs](/archived/status/deprecated/group-chat.md)  
+[Group chats specs](group-chat.md)  
 [May 22, 2020 change commit](https://github.com/status-im/specs/commit/664dd1c9df6ad409e4c007fefc8c8945b8d324e8)  

@@ -1,34 +1,20 @@
-# 61/STATUS-Community-History-Service
-
-| Field | Value |
-| --- | --- |
-| Name | Status Community History Service |
-| Slug | 61 |
-| Status | draft |
-| Category | Standards Track |
-| Editor | r4bbit <r4bbit@status.im> |
-| Contributors | Sanaz Taheri <sanaz@status.im>, John Lea <john@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/61/community-history-service.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/61/community-history-service.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/61/community-history-service.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/61/community-history-service.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/61/community-history-service.md) — ci: add mdBook configuration (#233)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/61/community-history-service.md) — Fix Files for Linting (#94)
-- **2024-03-21** — [`2eaa794`](https://github.com/vacp2p/rfc-index/blob/2eaa7949c4abe7d14e2b9560e8c045bf2e937c9a/status/61/community-history-service.md) — Broken Links + Change Editors (#26)
-- **2024-02-07** — [`d8ba50e`](https://github.com/vacp2p/rfc-index/blob/d8ba50ea62a367f476cd07f0de00b5cd66b128be/status/61/community-history-service.md) — Update community-history-service.md
-- **2024-02-05** — [`ad72c49`](https://github.com/vacp2p/rfc-index/blob/ad72c49f1ec7780549a78164e4c248584e52793b/status/61/community-history-service.md) — Create community-history-service.md
-
-<!-- timeline:end -->
+---
+slug: 61
+title: 61/STATUS-Community-History-Service
+name: Status Community History Service
+status: draft
+category: Standards Track
+description: Explains how new members of a Status community can request historical messages from archive nodes.
+editor: r4bbit <r4bbit@status.im>
+contributors:
+  - Sanaz Taheri <sanaz@status.im>
+  - John Lea <john@status.im>
+---
 
 ## Abstract
 
 Messages are stored permanently by store nodes
-([13/WAKU2-STORE](../../../messaging/standards/core/13/store.md))
+([13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md))
 for up to a certain configurable period of time,
 limited by the overall storage provided by a store node.
 Messages older than that period are no longer provided by store nodes,
@@ -55,9 +41,9 @@ while others operate in the Status communities layer):
 
 | Name                 | References |
 | -------------------- | --- |
-| Waku node            | An Waku node ([10/WAKU2](../../../messaging/standards/core/10/waku2.md)) that implements [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md)|
-| Store node           | A Waku node that implements [13/WAKU2-STORE](../../../messaging/standards/core/13/store.md) |
-| Waku network         | A group of Waku nodes forming a graph, connected via [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md) |
+| Waku node            | An Waku node ([10/WAKU2](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/10/waku2.md)) that implements [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md)|
+| Store node           | A Waku node that implements [13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md) |
+| Waku network         | A group of Waku nodes forming a graph, connected via [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md) |
 | Status user          | An Status account that is used in a Status consumer product, such as Status Mobile or Status Desktop |
 | Status node          | A Status client run by a Status application |
 | Control node      | A Status node that owns the private key for a Status community |
@@ -73,7 +59,7 @@ while others operate in the Status communities layer):
 This specification has the following assumptions:
 
 - Store nodes,
-([13/WAKU2-STORE](../../../messaging/standards/core/13/store.md)),
+([13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md)),
  are available 24/7 ensuring constant live message availability.
 - The storage time range limit is 30 days.
 - Store nodes have enough storage to persist historical messages for up to 30 days.
@@ -157,7 +143,7 @@ message archive metadata exchange provided by the community
 (last 30 days) of all the community channels,
 including the special channel from store nodes
 4. Member node receives Waku message
-([14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md))
+([14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md))
 that contains the metadata magnet link from the special channel
 5. Member node extracts the magnet link from the Waku message and
 passes it to torrent client
@@ -173,7 +159,7 @@ as covered by the message history archive
 
 ## Storing live messages
 
-For archival data serving, the control node MUST store live messages as [14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md).
+For archival data serving, the control node MUST store live messages as [14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md).
 This is in addition to their database of application messages.
 This is required to provide confidentiality, authenticity,
 and integrity of message data distributed via the BitTorrent layer, and
@@ -209,7 +195,7 @@ the `timestamp` has to lie within the day the latest message was received and
 the current day.
 
 Exported messages MUST be restored as
-[14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md) for bundling.
+[14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md) for bundling.
 Waku messages that are older than 30 days and
 have been exported for bundling can be removed from the control node's database
 (control nodes still maintain a database of application messages).
@@ -223,7 +209,7 @@ Message history archives are implemented using the following protocol buffer.
 ### WakuMessageHistoryArchive
 
 The `from` field SHOULD contain a timestamp of the time range's lower bound.
-The type parallels the `timestamp` of [WakuMessage](../../../messaging/standards/core/14/message.md).
+The type parallels the `timestamp` of [WakuMessage](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md/).
 
 The `to` field SHOULD contain a timestamp of the time range's the higher bound.
 
@@ -596,15 +582,15 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 ## References
 
-- [13/WAKU2-STORE](../../../messaging/standards/core/13/store.md)
+- [13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md)
 - [BitTorrent](https://bittorrent.org)
-- [10/WAKU2](../../../messaging/standards/core/10/waku2.md)
-- [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md)
+- [10/WAKU2](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/10/waku2.md)
+- [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md)
 - [Magnet URI scheme](https://en.wikipedia.org/wiki/Magnet_URI_scheme)
 - [forum discussion](https://forum.vac.dev/t/status-communities-protocol-and-product-point-of-view/114)
 - [org channels](https://github.com/status-im/specs/pull/151)
 - [UI feature spec](https://github.com/status-im/feature-specs/pull/36)
 - [Extensions for Peers to Send Metadata Files](https://www.bittorrent.org/beps/bep_0009.html)
 - [org channels spec](../56/communities.md)
-- [14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md)
+- [14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md)
 - [62/STATUS-PAYLOADS](../62/payloads.md)

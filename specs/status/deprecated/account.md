@@ -1,26 +1,14 @@
-# ACCOUNT
-
-| Field | Value |
-| --- | --- |
-| Name | Account |
-| Slug | 132 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Corey Petty <corey@status.im>, Oskar Thorén <oskar@status.im>, Samuel Hawksby-Robinson <samuel@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/account.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/account.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/account.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/account.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/account.md) — ci: add mdBook configuration (#233)
-- **2025-06-05** — [`36caaa6`](https://github.com/vacp2p/rfc-index/blob/36caaa621a711c7d73b5ecc80e7ba5f938d30691/status/deprecated/account.md) — Fix Errors rfc.vac.dev (#165)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/account.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: ACCOUNT
+name: Account
+status: deprecated
+description: This specification explains what a Status account is, and how a node establishes trust.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+  - Corey Petty <corey@status.im>
+  - Oskar Thorén <oskar@status.im>
+  - Samuel Hawksby-Robinson <samuel@status.im>
+---
 
 ## Abstract
 
@@ -137,7 +125,7 @@ This can be done in the following ways:
 
 #### Bundles
 
-- An X3DH prekey bundle is defined as ([code](https://github.com/status-im/status-go/messaging/chat/protobuf/encryption.pb.go)):
+- An X3DH prekey bundle is defined as ([code](https://github.com/status-im/status-go/blob/develop/pkg/messaging/layers/encryption/protocol_message.proto)):
 
   ```golang
   Identity                // Identity key
@@ -168,7 +156,7 @@ Status generates a deterministic 3-word random pseudonym from the Whisper/Waku c
 This pseudonym acts as a human readable fingerprint to the Whisper/Waku chat public key.
 This name also shows when viewing a contact's public profile and in the chat UI.
 
-- implementation: [gfycat](https://github.com/status-im/status-mobile/tree/develop/src/status_im/utils/gfycat)
+- implementation: [gfycat](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/events.cljs)
 
 #### ENS name
 
@@ -279,11 +267,11 @@ In the case of QR codes a compressed public key can reduce the complexity of the
 
 | Uncompressed |
 | --- |
-|![image](/archived/status/deprecated/images/qr-code1-accountmd.png) |
+|![image](images/qr-code1-accountmd.png) |
 
 | Compressed |
 | --- |
-| ![image](/archived/status/deprecated/images/qr-code2-accountmd.png)|
+| ![image](images/qr-code2-accountmd.png)|
 
 ### Key Encoding
 
@@ -465,8 +453,8 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [Open Whisper Systems](https://en.wikipedia.org/wiki/Signal_Messenger#2013%E2%80%932018:_Open_Whisper_Systems)
 - [X3DH](https://signal.org/docs/specifications/x3dh/#the-x3dh-protocol)
 - [web3 API](https://web3js.readthedocs.io/en/1.0/web3-shh.html#generatesymkeyfrompassword)
-- [Protobuf encryption](https://github.com/status-im/status-go/messaging/chat/protobuf/encryption.pb.go)
-- [gfycat in Status](https://github.com/status-im/status-mobile/tree/develop/src/status_im/utils/gfycat)
+- [Protobuf encryption](https://github.com/status-im/status-go/blob/develop/pkg/messaging/layers/encryption/protocol_message.proto)
+- [gfycat in Status](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/events.cljs)
 - [multiformats](https://github.com/multiformats/)
 - [status-go implementation and tests](https://github.com/status-im/status-go/blob/c9772325f2dca76b3504191c53313663ca2efbe5/api/utils_test.go)
 - [June 24, 2020 change commit](https://github.com/status-im/specs/commit/e98a9b76b7d4e1ce93e0b692e1521c2d54f72c59)

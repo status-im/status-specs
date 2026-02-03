@@ -1,33 +1,19 @@
-# 55/STATUS-1TO1-CHAT
-
-| Field | Value |
-| --- | --- |
-| Name | Status 1-to-1 Chat |
-| Slug | 55 |
-| Status | draft |
-| Category | Standards Track |
-| Editor | Aaryamann Challani <p1ge0nh8er@proton.me> |
-| Contributors | Andrea Piana <andreap@status.im>, Pedro Pombeiro <pedro@status.im>, Corey Petty <corey@status.im>, Oskar Thorén <oskarth@titanproxy.com>, Dean Eigenmann <dean@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/55/1to1-chat.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/55/1to1-chat.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/55/1to1-chat.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/55/1to1-chat.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/55/1to1-chat.md) — ci: add mdBook configuration (#233)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/55/1to1-chat.md) — Fix Files for Linting (#94)
-- **2024-09-12** — [`0b4d151`](https://github.com/vacp2p/rfc-index/blob/0b4d15163850762de0c62445ac093bfd2315a076/status/55/1to1-chat.md) — Update 1to1-chat.md (#92)
-- **2024-08-05** — [`eb25cd0`](https://github.com/vacp2p/rfc-index/blob/eb25cd06d679e94409072a96841de16a6b3910d5/status/55/1to1-chat.md) — chore: replace email addresses (#86)
-- **2024-03-21** — [`2eaa794`](https://github.com/vacp2p/rfc-index/blob/2eaa7949c4abe7d14e2b9560e8c045bf2e937c9a/status/55/1to1-chat.md) — Broken Links + Change Editors (#26)
-- **2024-02-07** — [`e95c5c6`](https://github.com/vacp2p/rfc-index/blob/e95c5c694731481588b25fedadba913461413f31/status/55/1to1-chat.md) — Update 1to1-chat.md
-- **2024-02-05** — [`44baefd`](https://github.com/vacp2p/rfc-index/blob/44baefd1e692b3c0a9a8258840b85885d945d1ee/status/55/1to1-chat.md) — Update 1to1-chat.md
-- **2024-02-01** — [`e105bea`](https://github.com/vacp2p/rfc-index/blob/e105bea76bf0324660226a752f36c509559bdf93/status/55/1to1-chat.md) — Update and rename 1TO1-CHAT.md to 1to1-chat.md
-- **2024-01-27** — [`4a8585b`](https://github.com/vacp2p/rfc-index/blob/4a8585b25be704a52e668f1cf0a0e0546809b66c/status/55/1TO1-CHAT.md) — Create 1TO1-CHAT.md
-
-<!-- timeline:end -->
+---
+slug: 55
+title: 55/STATUS-1TO1-CHAT
+name: Status 1-to-1 Chat
+status: draft
+category: Standards Track
+tags: waku-application
+description: A chat protocol to send public and private messages to a single recipient by the Status app.
+editor: Aaryamann Challani <p1ge0nh8er@proton.me>
+contributors:
+- Andrea Piana <andreap@status.im>
+- Pedro Pombeiro <pedro@status.im>
+- Corey Petty <corey@status.im>
+- Oskar Thorén <oskarth@titanproxy.com>
+- Dean Eigenmann <dean@status.im>
+---
 
 ## Abstract
 
@@ -56,7 +42,7 @@ to send messages in a 1-to-1 chat, with privacy and authenticity guarantees.
 
 This protocol MAY use any key-exchange mechanism previously discussed -
 
-1. [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
+1. [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 2. [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md)
 
 This protocol can provide end-to-end encryption
@@ -89,8 +75,8 @@ key-exchange protocols mentioned above.
 The 1:1 chat is made robust by having sessions between peers.
 It is handled by the key-exchange protocol used. For example,
 
-1. [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md),
-the session management is described in [54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md)
+1. [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md),
+the session management is described in [54/WAKU2-X3DH-SESSIONS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 
 2. [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md),
 the session management is described in [WAKU2-NOISE-SESSIONS](https://github.com/waku-org/specs/blob/master/standards/application/noise-sessions.md)
@@ -269,7 +255,7 @@ group admins MUST use an `IMAGE_CHANGED` event.
 ## Security Considerations
 
 1. Inherits the security considerations of the key-exchange mechanism used,
-e.g., [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md) or [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md)
+e.g., [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md) or [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md)
 
 ## Copyright
 
@@ -277,10 +263,10 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 ## References
 
-1. [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
+1. [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 2. [WAKU2-NOISE](https://github.com/waku-org/specs/blob/master/standards/application/noise.md)
 3. [65/STATUS-ACCOUNT](../65/account-address.md)
-4. [54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md)
+4. [54/WAKU2-X3DH-SESSIONS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 5. [WAKU2-NOISE-SESSIONS](https://github.com/waku-org/specs/blob/master/standards/application/noise-sessions.md)
 6. [56/STATUS-COMMUNITIES](../56/communities.md)
 7. [chat_message.proto](https://github.com/status-im/status-go/blob/5fd9e93e9c298ed087e6716d857a3951dbfb3c1e/protocol/protobuf/chat_message.proto#L1)

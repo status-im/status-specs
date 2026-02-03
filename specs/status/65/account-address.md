@@ -1,30 +1,16 @@
-# 65/STATUS-ACCOUNT-ADDRESS
-
-| Field | Value |
-| --- | --- |
-| Name | Status Account Address |
-| Slug | 65 |
-| Status | draft |
-| Category | Standards Track |
-| Editor | Aaryamann Challani <p1ge0nh8er@proton.me> |
-| Contributors | Corey Petty <corey@status.im>, Oskar Thorén <oskarth@titanproxy.com>, Samuel Hawksby-Robinson <samuel@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/65/account-address.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/65/account-address.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/65/account-address.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/65/account-address.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/65/account-address.md) — ci: add mdBook configuration (#233)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/65/account-address.md) — Fix Files for Linting (#94)
-- **2024-08-05** — [`eb25cd0`](https://github.com/vacp2p/rfc-index/blob/eb25cd06d679e94409072a96841de16a6b3910d5/status/65/account-address.md) — chore: replace email addresses (#86)
-- **2024-02-05** — [`67a1221`](https://github.com/vacp2p/rfc-index/blob/67a1221ab0b0b27e3376c389575c77bfa38057de/status/65/account-address.md) — Update account-address.md
-- **2024-02-01** — [`91874da`](https://github.com/vacp2p/rfc-index/blob/91874da9b18b40078d4932819b30d271b321ac53/status/65/account-address.md) — Update and rename ACCOUNT-ADDRESS.md to account-address.md
-- **2024-01-27** — [`ae04f02`](https://github.com/vacp2p/rfc-index/blob/ae04f026594cf6c4ede40b5d4ba8bb4e3462a447/status/65/ACCOUNT-ADDRESS.md) — Create ACCOUNT-ADDRESS.md
-
-<!-- timeline:end -->
+---
+slug: 65
+title: 65/STATUS-ACCOUNT-ADDRESS
+name: Status Account Address
+status: draft
+category: Standards Track
+description: Details of what a Status account address is and how account addresses are created and used.
+editor: Aaryamann Challani <p1ge0nh8er@proton.me>
+contributors:
+- Corey Petty <corey@status.im>
+- Oskar Thorén <oskarth@titanproxy.com>
+- Samuel Hawksby-Robinson <samuel@status.im>
+---
 
 ## Abstract
 
@@ -71,7 +57,7 @@ that others may contact them.
 
 ### X3DH Prekey bundles
 
-- Refer to [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
+- Refer to [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 for details on the X3DH prekey bundle broadcasting, as well as regeneration.
 
 ## Optional Account additions
@@ -130,8 +116,8 @@ that belong to a user need to be paired.
 ## Security Considerations
 
 - This specification inherits security considerations of
-[53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md) and
-[54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md).
+[53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md) and
+[54/WAKU2-X3DH-SESSIONS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md).
 
 ## Copyright
 
@@ -141,8 +127,8 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 ### normative
 
-- [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
-- [54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md)
+- [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
+- [54/WAKU2-X3DH-SESSIONS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 - [55/STATUS-1TO1-CHAT](../55/1to1-chat.md)
 
 ## informative
