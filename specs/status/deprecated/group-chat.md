@@ -1,26 +1,12 @@
-# GROUP-CHAT
-
-| Field | Value |
-| --- | --- |
-| Name | Group Chat |
-| Slug | 120 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Andrea Piana <andreap@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/group-chat.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/deprecated/group-chat.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/group-chat.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/group-chat.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/group-chat.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/group-chat.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/group-chat.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: GROUP-CHAT
+name: Group Chat
+status: deprecated
+description: This document describes the group chat protocol used by the Status application.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+  - Andrea Piana <andreap@status.im>
+---
 
 ## Abstract
 
@@ -31,7 +17,7 @@ between each participant, similarly to a one-to-one message.
 ## Membership updates
 
 The node uses membership updates messages to propagate group chat membership changes.
-The protobuf format is described in the [PAYLOADS](/archived/status/deprecated/payloads.md).
+The protobuf format is described in the [PAYLOADS](payloads.md).
 Below describes each specific field.
 
 The protobuf messages are:
@@ -50,7 +36,7 @@ message MembershipUpdateMessage {
 }
 
 message MembershipUpdateEvent {
-  // Lamport timestamp of the event as described in [Status Payload Specs](status-payload-specs.md#clock-vs-timestamp-and-message-ordering)
+  // Lamport timestamp of the event as described in [Status Payload Specs](payloads.md#clock-vs-timestamp-and-message-ordering)
   uint64 clock = 1;
   // List of public keys of the targets of the action
   repeated string members = 2;
@@ -80,7 +66,7 @@ message MembershipUpdateEvent {
 | ----- | ---- | ---- | ---- |
 | 1 | chat-id | `string` | The chat id of the chat where the change is to take place |
 | 2 | events | See details | A list of events that describe the membership changes, in their encoded protobuf form |
-| 3 | message | `ChatMessage` | An optional message, described in [Message](/archived/status/deprecated/payloads.md#message) |
+| 3 | message | `ChatMessage` | An optional message, described in [Message](payloads.md/#message) |
 
 `MembershipUpdateEvent`:
 
@@ -172,5 +158,5 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 ## References
 
-- [PAYLOADS](/archived/status/deprecated/payloads.md)
+- [PAYLOADS](payloads.md)
 - [UUID](https://tools.ietf.org/html/rfc4122)

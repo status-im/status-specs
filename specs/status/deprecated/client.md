@@ -1,26 +1,17 @@
-# CLIENT
-
-| Field | Value |
-| --- | --- |
-| Name | Client |
-| Slug | 123 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Adam Babik <adam@status.im>, Andrea Maria Piana <andreap@status.im>, Dean Eigenmann <dean@status.im>, Corey Petty <corey@status.im>, Oskar Thorén <oskar@status.im>, Samuel Hawksby-Robinson <samuel@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/client.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/deprecated/client.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/client.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/client.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/client.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/client.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/client.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: CLIENT
+name: Client
+status: deprecated
+description: This specification describes how to write a Status client for communicating with other Status clients.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+  - Adam Babik <adam@status.im>
+  - Andrea Maria Piana <andreap@status.im>
+  - Dean Eigenmann <dean@status.im>
+  - Corey Petty <corey@status.im>
+  - Oskar Thorén <oskar@status.im>
+  - Samuel Hawksby-Robinson <samuel@status.im>
+---
 
 ## Abstract
 
@@ -71,7 +62,7 @@ allows for TCP-based communication between nodes.
 
 On top of this RLPx-based subprotocols are ran, the client
 SHOULD NOT use [Whisper V6](https://eips.ethereum.org/EIPS/eip-627), the client
-SHOULD use [Waku V1](/messaging/standards/legacy/6/waku1.md)
+SHOULD use [Waku V1](https://github.com/vacp2p/rfc-index/blob/master/docs/messaging/standards/legacy/6/waku1.md)
 for privacy-preserving messaging and efficient usage of a node's bandwidth.
 
 #### Node discovery and roles
@@ -175,21 +166,21 @@ to use Whisper and/or Waku to communicate with other Status nodes.
 Once a Whisper and/or Waku node is up and running there are some specific settings required
 to communicate with other Status nodes.
 
-See [WHISPER-USAGE](/archived/status/deprecated/whisper-usage.md) and [WAKU-USAGE](/archived/status/deprecated/waku-usage.md) for more details.
+See [WHISPER-USAGE](whisper-usage.md) and [WAKU-USAGE](waku-usage.md) for more details.
 
-For providing an offline inbox, see the complementary [WHISPER-MAILSERVER](/archived/status/deprecated/whisper-mailserver.md) and [WAKU-MAILSERVER](/archived/status/deprecated/waku-mailserver.md).
+For providing an offline inbox, see the complementary [WHISPER-MAILSERVER](whisper-mailserver.md) and [WAKU-MAILSERVER](waku-mailserver.md).
 
 ### Secure Transport
 
 In order to provide confidentiality, integrity, authentication and forward
 secrecy of messages the node implements a secure transport on top of Whisper and Waku. This is
-used in 1:1 chats and group chats, but not for public chats. See [SECURE-TRANSPORT](/archived/status/deprecated/secure-transport.md) for more.
+used in 1:1 chats and group chats, but not for public chats. See [SECURE-TRANSPORT](secure-transport.md) for more.
 
 ### Data Sync
 
-[MVDS](/ift-ts/raw/2/mvds.md) is used for 1:1 and group chats, however it is currently not in use for public chats.
+[MVDS](https://github.com/vacp2p/rfc-index/blob/master/docs/ift-ts/raw/2/mvds.md) is used for 1:1 and group chats, however it is currently not in use for public chats.
 [Status payloads](#payloads-and-clients) are serialized and then wrapped inside an
-MVDS message which is added to an [MVDS payload](/ift-ts/raw/2/mvds.md#payloads),
+MVDS message which is added to an [MVDS payload](https://github.com/vacp2p/rfc-index/blob/master/docs/ift-ts/raw/2/mvds.md#payloads),
 the node encrypts this payload (if necessary for 1-to-1 / group-chats) and sends it using
 Whisper or Waku which also encrypts it.
 
@@ -197,12 +188,12 @@ Whisper or Waku which also encrypts it.
 
 On top of secure transport, various types of data sync clients and
 the node uses payload formats for things like 1:1 chat, group chat and public chat. These have
-various degrees of standardization. Please refer to [PAYLOADS](/archived/status/deprecated/payloads.md) for more details.
+various degrees of standardization. Please refer to [PAYLOADS](payloads.md) for more details.
 
 ### BIPs and EIPs Standards support
 
 For a list of EIPs and BIPs that SHOULD be supported by Status client, please
-see [EIPS](/archived/status/deprecated/eips.md).
+see [EIPS](eips.md).
 
 ## Security Considerations
 
@@ -247,7 +238,7 @@ computer.
 ### Why do you use Waku?
 
 Waku is a direct upgrade and replacement for Whisper, the main motivation for
-developing and implementing Waku can be found in the [Waku specs](/messaging/README.md).
+developing and implementing Waku can be found in the [Waku specs](https://lip.logos.co/messaging/).
 
 >Waku was created to incrementally improve in areas that Whisper is lacking in,
 >with special attention to resource restricted devices. We specify the standard for
@@ -265,7 +256,7 @@ is not currently under active development, and it has several drawbacks. Among o
 - There are no incentives to run a node
 
 Finding a more suitable transport privacy is an ongoing research effort,
-together with [IFT-TS](https://vac.dev/vac-overview) and other teams in the space.
+together with [Vac](https://vac.dev/vac-overview) and other teams in the space.
 
 ### Why is PoW for Waku set so low?
 
@@ -405,25 +396,25 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [Discv5](https://github.com/ethereum/devp2p/blob/master/discv5/discv5.md)
 - [RLPx Transport Protocol, v5](https://github.com/ethereum/devp2p/blob/master/rlpx.md)
 - [Whisper V6](https://eips.ethereum.org/EIPS/eip-627)
-- [Waku V1](/messaging/standards/legacy/6/waku1.md)
+- [Waku V1](https://github.com/vacp2p/rfc-index/blob/master/docs/messaging/standards/legacy/6/waku1.md)
 - [Rendezvous Protocol](https://github.com/libp2p/specs/tree/master/rendezvous)
 - [Rendezvous Protocol modifications](https://github.com/status-im/rendezvous#differences-with-original-rendezvous)
 - [Fleets Status](https://fleets.status.im)
 - [EIP-1459](https://eips.ethereum.org/EIPS/eip-1459#client-protocol)
-- [WHISPER-USAGE](/archived/status/deprecated/whisper-usage.md)
-- [WAKU-USAGE](/archived/status/deprecated/waku-usage.md)
-- [WHISPER-MAILSERVER](/archived/status/deprecated/whisper-mailserver.md)
-- [WAKU-MAILSERVER](/archived/status/deprecated/waku-mailserver.md)
-- [SECURE-TRANSPORT](/archived/status/deprecated/secure-transport.md)
-- [MVDS](/ift-ts/raw/2/mvds.md)
-- [PAYLOADS](/archived/status/deprecated/payloads.md)
-- [EIPS](/archived/status/deprecated/eips.md)
+- [WHISPER-USAGE](whisper-usage.md)
+- [WAKU-USAGE](waku-usage.md)
+- [WHISPER-MAILSERVER](whisper-mailserver.md)
+- [WAKU-MAILSERVER](waku-mailserver.md)
+- [SECURE-TRANSPORT](secure-transport.md)
+- [MVDS](https://github.com/vacp2p/rfc-index/blob/master/docs/ift-ts/raw/2/mvds.md)
+- [PAYLOADS](payloads.md)
+- [EIPS](eips.md)
 - [Murmur](https://github.com/status-im/murmur)
 - [Re-enable LES as option](https://github.com/status-im/status-go/issues/1025)
 - [Swarm adaptive nodes](https://github.com/ethersphere/SWIPs/pull/12)
 - [Whisper vs PSS](https://our.status.im/whisper-pss-comparison/)
-- [Waku specs](/messaging/README.md)
-- [IFT-TS](https://vac.dev/vac-overview)
+- [Waku specs](https://lip.logos.co/messaging/)
+- [Vac](https://vac.dev/vac-overview)
 - [theoretical scaling model](https://github.com/vacp2p/research/tree/dcc71f4779be832d3b5ece9c4e11f1f7ec24aac2/whisper_scalability)
 - [Anonymity](https://eprint.iacr.org/2017/954.pdf)
 - [trilemma](https://petsymposium.org/2019/files/hotpets/slides/coordination-helps-anonymity-slides.pdf)

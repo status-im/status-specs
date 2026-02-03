@@ -1,37 +1,14 @@
-# STATUS-SIMPLE-SCALING
-
-| Field | Value |
-| --- | --- |
-| Name | Status Simple Scaling |
-| Slug | 115 |
-| Status | raw |
-| Category | Informational |
-| Editor | Daniel Kaiser <danielkaiser@status.im> |
-| Contributors | Alvaro Revuelta <alrevuelta@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/raw/simple-scaling.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/raw/simple-scaling.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/raw/simple-scaling.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/raw/simple-scaling.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/raw/simple-scaling.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/raw/simple-scaling.md) — ci: add mdBook configuration (#233)
-- **2024-11-20** — [`ff87c84`](https://github.com/vacp2p/rfc-index/blob/ff87c84dc71d4f933bab188993914069fea12baa/status/raw/simple-scaling.md) — Update Waku Links (#104)
-- **2024-09-17** — [`9b5e219`](https://github.com/vacp2p/rfc-index/blob/9b5e2194cf2a2464740de6798fddd21a24b2dc7e/status/raw/simple-scaling.md) — Update simple-scaling (#93)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/raw/simple-scaling.md) — Fix Files for Linting (#94)
-- **2024-06-14** — [`a189a72`](https://github.com/vacp2p/rfc-index/blob/a189a72146978307ede84708d89c580dab5bc142/status/raw/simple-scaling.md) — fix: messageHash in 57 (#22)
-- **2024-03-01** — [`61a39e2`](https://github.com/vacp2p/rfc-index/blob/61a39e26d7b8a1ced4c9e56b971a20c72679556d/status/raw/simple-scaling.md) — Update and rename vac/raw/57/simple-scaling.md to status/raw/simple-scaling.md
-- **2024-02-28** — [`18a16ae`](https://github.com/vacp2p/rfc-index/blob/18a16ae6954f49fba0046d8e418f7bc55ae4c7aa/vac/raw/57/simple-scaling.md) — Update and rename simple-scaling.md to simple-scaling.md
-- **2024-02-12** — [`f19a136`](https://github.com/vacp2p/rfc-index/blob/f19a136ea6c0ae18c4a8afaed88a81b0aaa30262/status/raw/57/simple-scaling.md) — Update and rename status/57/simple-scaling.md to status/raw/57/simple-scaling.md
-- **2024-02-07** — [`27fae4f`](https://github.com/vacp2p/rfc-index/blob/27fae4fe9168cb2318f54ee94852150019be5652/status/57/simple-scaling.md) — Update simple-scaling.md
-- **2024-02-05** — [`fa8c750`](https://github.com/vacp2p/rfc-index/blob/fa8c750dd762ccef1cc6c8d775f57a57a6f9bd21/status/57/simple-scaling.md) — Update simple-scaling.md
-- **2024-02-01** — [`5919040`](https://github.com/vacp2p/rfc-index/blob/59190400c67b7a2d9b7bfa1ab5504eabb3637317/status/57/simple-scaling.md) — Update simple-scaling.md
-- **2024-01-27** — [`f7a51b9`](https://github.com/vacp2p/rfc-index/blob/f7a51b9fdfc3155fa09795cf6902f5d4d82f83b7/status/57/simple-scaling.md) — Create simple-scaling.md
-
-<!-- timeline:end -->
+---
+title: STATUS-SIMPLE-SCALING
+name: Status Simple Scaling
+status: raw
+category: Informational
+tags: waku/application
+description: Describes how to scale Status Communities and Status 1-to-1 chats using Waku v2 protocol and components.
+editor: Daniel Kaiser <danielkaiser@status.im>
+contributors:
+- Alvaro Revuelta <alrevuelta@status.im>
+---
 
 ## Abstract
 
@@ -57,7 +34,7 @@ is better than a fully centralized solution.
 [56/STATUS-COMMUNITIES](../56/communities.md) as well as
 [55/STATUS-1TO1-CHAT](../55/1to1-chat.md) use Waku v2 protocols.
 Both use Waku content topics
-(see [23/WAKU2-TOPICS](../../../messaging/informational/23/topics.md))
+(see [23/WAKU2-TOPICS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/23/topics.md))
 for content based filtering.
 
 Waku v2 currently has scaling limitations in two dimensions:
@@ -83,7 +60,7 @@ efficient way will be part of a future document.
 
 ## Relay Shards
 
-Sharding the [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md)
+Sharding the [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md)
 network is an integral part of scaling the Status app.
 
 [WAKU2-RELAY-SHARDING](https://github.com/waku-org/specs/blob/master/standards/core/relay-sharding.md)
@@ -224,7 +201,7 @@ shardIndex = 768 + mod(publicKey, shardNum)
 
 ## Infrastructure Nodes
 
-As described in [30/ADAPTIVE-NODES](../../../messaging/informational/30/adaptive-nodes.md),
+As described in [30/ADAPTIVE-NODES](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/30/adaptive-nodes.md),
 Waku supports a continuum of node types with respect to available resources.
 Infrastructure nodes are powerful nodes that have a high bandwidth connection and
 a high up-time.
@@ -274,7 +251,7 @@ We could improve on this in the future, and research the applicability of PIR
 
 Waku messages are typically relayed in larger mesh networks
 comprised of nodes with varying resource profiles
-(see [30/ADAPTIVE-NODES](../../../messaging/informational/30/adaptive-nodes.md)).
+(see [30/ADAPTIVE-NODES](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/30/adaptive-nodes.md)).
 To maximise scaling, relaying of specific message types can be dedicated to shards
 where only infrastructure nodes with very strong resource profiles relay messages.
 This comes as a trade-off to decentralization.
@@ -330,18 +307,18 @@ have a low bandwidth connection or a connection with usage-based billing.
 
 Light protocols comprise
 
-* [19/WAKU2-LIGHTPUSH](../../../messaging/standards/core/19/lightpush.md) for sending messages
-* [12/WAKU2-FILTER](../../../messaging/standards/core/12/filter.md)
+* [19/WAKU2-LIGHTPUSH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/19/lightpush.md) for sending messages
+* [12/WAKU2-FILTER](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/12/filter.md)
 for requesting messages with specific attributes
-* [WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/master/standards/core/peer-exchange.md)
+* [WAKU2-PEER-EXCHANGE](https://lip.logos.co/messaging/standards/core/34/peer-exchange.html)
 for discovering peers
 
 ## Waku Archive
 
 Archive nodes are Waku nodes that offer the Waku archive service via
-the Waku store protocol ([13/WAKU2-STORE](../../../messaging/standards/core/13/store.md)).
+the Waku store protocol ([13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md)).
 They are part of a set of shards and store all messages disseminated in these shards.
-Nodes can request history messages via the [13/WAKU2-STORE](../../../messaging/standards/core/13/store.md).
+Nodes can request history messages via the [13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md).
 
 The store service is not limited to a Status fleet.
 Anybody can run a Waku Archive node in the Status shards.
@@ -368,9 +345,9 @@ Nodes can check whether they are behind a restrictive NAT using the
 [libp2p AutoNAT protocol](https://github.com/libp2p/specs/blob/master/autonat/README.md).
 
 > *Note:* The following will move into [WAKU2-RELAY-SHARDING](https://github.com/waku-org/specs/blob/master/standards/core/relay-sharding.md),
-or [33/WAKU2-DISCV5](../../../messaging/standards/core/33/discv5.md):
+or [33/WAKU2-DISCV5](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/33/discv5.md):
 Nodes behind restrictive NATs SHOULD not announce their publicly unreachable address
-via [33/WAKU2-DISCV5](../../../messaging/standards/core/33/discv5.md) discovery.
+via [33/WAKU2-DISCV5](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/33/discv5.md) discovery.
 
 It is RECOMMENDED that nodes that are part of the relay network also
 act as rendezvous points.
@@ -392,9 +369,9 @@ functionality offered by the libp2p circuit relay protocols, and
 to upgrade to a direct connection.
 
 Nodes that do not announce themselves at all and only plan to use light protocols,
-MAY use rendezvous discovery instead of or along-side [WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/master/standards/core/peer-exchange.md).
+MAY use rendezvous discovery instead of or along-side [WAKU2-PEER-EXCHANGE](https://lip.logos.co/messaging/standards/core/34/peer-exchange.html).
 For these nodes, rendezvous and
-[WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/master/standards/core/peer-exchange.md)
+[WAKU2-PEER-EXCHANGE](https://lip.logos.co/messaging/standards/core/34/peer-exchange.html)
 offer the same functionality,
 but return node sets sampled in different ways.
 Using both can help increasing connectivity.
@@ -635,26 +612,26 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 * [56/STATUS-COMMUNITIES](../56/communities.md)
 * [55/STATUS-1TO1-CHAT](../55/1to1-chat.md)
-* [23/WAKU2-TOPICS](../../../messaging/informational/23/topics.md)
-* [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md)
+* [23/WAKU2-TOPICS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/23/topics.md)
+* [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md)
 * [WAKU2-RELAY-SHARDING](https://github.com/waku-org/specs/blob/master/standards/core/relay-sharding.md)
 * [WAKU2-RELAY-STATIC-SHARD-ALLOC](https://github.com/waku-org/specs/blob/master/informational/relay-static-shard-alloc.md)
-* [30/ADAPTIVE-NODES](../../../messaging/informational/30/adaptive-nodes.md)
-* [19/WAKU2-LIGHTPUSH](../../../messaging/standards/core/19/lightpush.md)
-* [12/WAKU2-FILTER](../../../messaging/standards/core/12/filter.md)
-* [WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/master/standards/core/peer-exchange.md)
-* [13/WAKU2-STORE](../../../messaging/standards/core/13/store.md)
+* [30/ADAPTIVE-NODES](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/30/adaptive-nodes.md)
+* [19/WAKU2-LIGHTPUSH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/19/lightpush.md)
+* [12/WAKU2-FILTER](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/12/filter.md)
+* [WAKU2-PEER-EXCHANGE](https://lip.logos.co/messaging/standards/core/34/peer-exchange.html)
+* [13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md)
 * [libp2p rendezvous](https://github.com/libp2p/specs/blob/master/rendezvous/README.md)
 * [libp2p AutoNAT protocol](https://github.com/libp2p/specs/blob/master/autonat/README.md)
-* [33/WAKU2-DISCV5](../../../messaging/standards/core/33/discv5.md)
+* [33/WAKU2-DISCV5](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/33/discv5.md)
 * [libp2p circuit relay](https://github.com/libp2p/specs/blob/6634ca7abb2f955645243d48d1cd2fd02a8e8880/relay/circuit-v2.md)
 * [limiting](https://github.com/libp2p/specs/blob/6634ca7abb2f955645243d48d1cd2fd02a8e8880/relay/circuit-v2.md#reservation)
 * [DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
 * [scoring](https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/gossipsub-v1.1.md#extended-validators)
-* [Circuit Relay](https://docs.libp2p.io/concepts/nat/circuit-relay/)
+* [Circuit Relay](https://github.com/libp2p/specs/blob/6634ca7abb2f955645243d48d1cd2fd02a8e8880/relay/circuit-v2.md)
 * [WAKU2-ADVERSARIAL-MODELS](https://github.com/waku-org/specs/blob/master/informational/adversarial-models.md)
 
 ## Informative
 
-* [Circuit Relay](https://docs.libp2p.io/concepts/nat/circuit-relay/)
+* [Circuit Relay](https://github.com/libp2p/specs/blob/6634ca7abb2f955645243d48d1cd2fd02a8e8880/relay/circuit-v2.md)
 * [WAKU2-ENR](https://github.com/waku-org/specs/blob/master/standards/core/enr.md)

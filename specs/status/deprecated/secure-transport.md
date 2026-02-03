@@ -1,26 +1,16 @@
-# SECURE-TRANSPORT
-
-| Field | Value |
-| --- | --- |
-| Name | Secure Transport |
-| Slug | 119 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Andrea Maria Piana <andreap@status.im>, Corey Petty <corey@status.im>, Dean Eigenmann <dean@status.im>, Oskar Thorén <oskar@status.im>, Pedro Pombeiro <pedro@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/secure-transport.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/deprecated/secure-transport.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/secure-transport.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/secure-transport.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/secure-transport.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/secure-transport.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/secure-transport.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: SECURE-TRANSPORT
+name: Secure Transport
+status: deprecated
+description: This document describes how Status provides a secure channel between two peers, providing confidentiality, integrity, authenticity, and forward secrecy.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+  - Andrea Maria Piana <andreap@status.im>
+  - Corey Petty <corey@status.im>
+  - Dean Eigenmann <dean@status.im>
+  - Oskar Thorén <oskar@status.im>
+  - Pedro Pombeiro <pedro@status.im>
+---
 
 ## Abstract
 
@@ -62,13 +52,13 @@ Types used in this specification are defined using [Protobuf](https://developers
 
 ### Transport Layer
 
-[Whisper](/archived/status/deprecated/whisper-usage.md) and [Waku](/archived/status/deprecated/waku-usage.md) serves as the transport layers for the Status chat protocol.
+[Whisper](whisper-usage.md) and [Waku](waku-usage.md) serves as the transport layers for the Status chat protocol.
 
 ### User flow for 1-to-1 communications
 
 #### Account generation
 
-See [Account specification](/archived/status/deprecated/account.md)
+See [Account specification](account.md)
 
 #### Account recovery
 
@@ -126,7 +116,7 @@ Every client initially generates some key material which is stored locally:
 - A signed prekey based on secp256k1 - `SPK`
 - A prekey signature - `Sig(IK, Encode(SPK))`
 
-More details can be found in the `X3DH Prekey bundle creation` section of [2/ACCOUNT](/archived/status/deprecated/account.md#x3dh-prekey-bundles).
+More details can be found in the `X3DH Prekey bundle creation` section of [2/ACCOUNT](account.md#x3dh-prekey-bundles).
 
 Prekey bundles can be extracted from any user's messages,
 or found via searching for their specific topic, `{IK}-contact-code`.
@@ -170,7 +160,7 @@ There are two phases in the initial negotiation of a 1:1 chat:
 A QR code serves two purposes simultaneously - identity verification and initial bundle retrieval;
 1. **Asynchronous initial key exchange**, using X3DH.
 
-For more information on account generation and trust establishment, see [2/ACCOUNT](/archived/status/deprecated/account.md)
+For more information on account generation and trust establishment, see [2/ACCOUNT](account.md)
 
 #### Initial key exchange flow (X3DH)
 
@@ -582,12 +572,12 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [X3DH](https://signal.org/docs/specifications/x3dh/)
 - [Double Ratchet](https://signal.org/docs/specifications/doubleratchet/)
 - [Protobuf](https://developers.google.com/protocol-buffers/)
-- [Whisper](/archived/status/deprecated/whisper-usage.md)
-- [Waku](/archived/status/deprecated/waku-usage.md)
-- [Account specification](/archived/status/deprecated/account.md)
+- [Whisper](whisper-usage.md)
+- [Waku](waku-usage.md)
+- [Account specification](account.md)
 - [Status implementation](https://github.com/status-im/doubleratchet/)
 - [Off-the-Record protocol](https://otr.cypherpunks.ca/Protocol-v3-4.1.1.html)
 - [X3DH](https://signal.org/docs/specifications/x3dh/)
-- [ACCOUNT](/archived/status/deprecated/account.md)
+- [ACCOUNT](account.md)
 - [Sesame](https://signal.org/docs/specifications/sesame/)
 - [May 22, 2020 commit change](https://github.com/status-im/specs/commit/664dd1c9df6ad409e4c007fefc8c8945b8d324e8)

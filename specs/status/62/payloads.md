@@ -1,30 +1,16 @@
-# 62/STATUS-PAYLOADS
-
-| Field | Value |
-| --- | --- |
-| Name | Status Message Payloads |
-| Slug | 62 |
-| Status | draft |
-| Editor | r4bbit <r4bbit@status.im> |
-| Contributors | Adam Babik <adam@status.im>, Andrea Maria Piana <andreap@status.im>, Oskar Thoren <oskarth@titanproxy.com>, Samuel Hawksby-Robinson <samuel@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/62/payloads.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/62/payloads.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/62/payloads.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/62/payloads.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/62/payloads.md) — ci: add mdBook configuration (#233)
-- **2024-09-16** — [`ad80a59`](https://github.com/vacp2p/rfc-index/blob/ad80a59e2ba8f18c179158973d31e7fac2cb714a/status/62/payloads.md) — 62/STATUS-PAYLOAD: Add Description (#95)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/62/payloads.md) — Fix Files for Linting (#94)
-- **2024-02-07** — [`1abf2c9`](https://github.com/vacp2p/rfc-index/blob/1abf2c9c7bbef07b75637d8f897d25108b984dc2/status/62/payloads.md) — Rename payload.md to payloads.md
-- **2024-02-07** — [`e2b9e32`](https://github.com/vacp2p/rfc-index/blob/e2b9e32028c91650310e786c377c938510ba229a/status/62/payload.md) — Update payload.md
-- **2024-02-05** — [`20e9a66`](https://github.com/vacp2p/rfc-index/blob/20e9a66cf80cbc565ccff914a0d97f87b8fcbe2e/status/62/payload.md) — Rename payloads.md to payload.md
-- **2024-02-05** — [`488ce9b`](https://github.com/vacp2p/rfc-index/blob/488ce9b72cc0b670cbbdcbacedc3a92dc8295a24/status/62/payloads.md) — Create payloads.md
-
-<!-- timeline:end -->
+---
+slug: 62
+title: 62/STATUS-PAYLOADS
+name: Status Message Payloads
+status: draft
+description: Describes the payload of each message in Status.
+editor: r4bbit <r4bbit@status.im>
+contributors: 
+- Adam Babik <adam@status.im>
+- Andrea Maria Piana <andreap@status.im>
+- Oskar Thoren <oskarth@titanproxy.com>
+- Samuel Hawksby-Robinson <samuel@status.im>
+---
 
 ## Abstract
 
@@ -33,7 +19,7 @@ like.
 It is primarily centered around chat and chat-related use cases.
 
 The payloads aims to be flexible enough to support messaging but also cases
-described in the [Status Whitepaper](https://status.im/whitepaper.pdf) as well
+described in the [Status Whitepaper](https://allcryptowhitepapers.com/status-whitepaper/) as well
 as various clients created using different technologies.
 
 ## Wire Format Specification
@@ -321,7 +307,7 @@ message DiscordMessageAttachment {
 
 A node requires message types to decide how to encrypt a particular message and
 what metadata needs to be attached when passing a message to the transport layer.
-For more on this, see [10/WAKU2](../../../messaging/standards/core/10/waku2.md).
+For more on this, see [10/WAKU2](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/10/waku2.md).
 
 <!-- TODO: This reference is a bit odd,
 considering the layer payloads should interact with is Secure Transport, and
@@ -1143,20 +1129,20 @@ which might break compatibility
 
 ### Version 0.5
 
-Released [August 25, 2020](https://github.com/status-im/specs/commit/968fafff23cdfc67589b34dd64015de29aaf41f0)
+Released August 25, 2020
 
 * Added support for emoji reactions
 
 ### Version 0.4
 
-Released [July 16, 2020](https://github.com/status-im/specs/commit/ad45cd5fed3c0f79dfa472253a404f670dd47396)
+Released July 16, 2020
 
 * Added support for images
 * Added support for audio
 
 ### Version 0.3
 
-Released [May 22, 2020](https://github.com/status-im/specs/commit/664dd1c9df6ad409e4c007fefc8c8945b8d324e8)
+Released May 22, 2020
 
 * Added language to include Waku in all relevant places
 

@@ -1,30 +1,15 @@
-# STATUS-PROTOCOLS
+---
+title: STATUS-PROTOCOLS
+name: Status Protocol Stack
+status: raw
+category: Standards Track
+description: Specifies the Status application protocol stack.
+editor: Hanno Cornelius <hanno@status.im>
+contributors: 
+- Jimmy Debe <jimmy@status.im>
+- Aaryamann Challani <p1ge0nh8er@proton.me>
 
-| Field | Value |
-| --- | --- |
-| Name | Status Protocol Stack |
-| Slug | 113 |
-| Status | raw |
-| Category | Standards Track |
-| Editor | Hanno Cornelius <hanno@status.im> |
-| Contributors | Jimmy Debe <jimmy@status.im>, Aaryamann Challani <p1ge0nh8er@proton.me> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/raw/status-app-protocols.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/raw/status-app-protocols.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/raw/status-app-protocols.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/raw/status-app-protocols.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/raw/status-app-protocols.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/raw/status-app-protocols.md) — ci: add mdBook configuration (#233)
-- **2025-03-07** — [`f4b34af`](https://github.com/vacp2p/rfc-index/blob/f4b34afd1a1e198b0d99b911bf8b371b5b13a6b8/status/raw/status-app-protocols.md) — Fix Linting Errors (#135)
-- **2025-02-21** — [`9bed57e`](https://github.com/vacp2p/rfc-index/blob/9bed57e4ad5d6609202a18f581a00b2fd81f6acb/status/raw/status-app-protocols.md) — docs: define basic sharding for Communities (#132)
-- **2024-11-20** — [`776c1b7`](https://github.com/vacp2p/rfc-index/blob/776c1b76cda73aa1feaf5746a4cdb56b6836b4be/status/raw/status-app-protocols.md) — rfc-index: Update (#110)
-- **2024-10-25** — [`37b3edf`](https://github.com/vacp2p/rfc-index/blob/37b3edfba3a103ef138a345a2a0cac7f28c07f7a/status/raw/status-app-protocols.md) — docs: add spec for status protocol stack, deprecate waku-usage spec (#105)
-
-<!-- timeline:end -->
+---
 
 ## Abstract
 
@@ -160,7 +145,7 @@ App-level messages that are considered ephemeral, MUST set the `ephemeral` field
 
 The end-to-end reliability layer contains the functions related to one of the two end-to-end reliability schemes defined for Status app messages:
 
-1. Minimum Viable protocol for Data Synchronisation, or MVDS (see [STATUS-MVDS-USAGE](status-mvds.md))
+1. Minimum Viable protocol for Data Synchronisation, or MVDS (see [STATUS-MVDS-USAGE](./status-mvds.md))
 2. Scalable distributed log reliability (spec and a punchier name TBD, see the [original forum post announcement](https://forum.vac.dev/t/end-to-end-reliability-for-scalable-distributed-logs/293/16))
 
 Ephemeral messages SHOULD omit this layer.
@@ -180,11 +165,11 @@ The encryption layer wraps the Status App and Reliability layers in an encrypted
 
 ## Waku transport layer
 
-The Waku transport layer contains the functions allowing Status protocols to use [10/WAKU2](../../../messaging/standards/core/10/waku2.md) infrastructure as transport.
+The Waku transport layer contains the functions allowing Status protocols to use [10/WAKU2](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/10/waku2.md) infrastructure as transport.
 
 ### Waku messages
 
-Each Status application message MUST be transformed to a [14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md) with the following structure:
+Each Status application message MUST be transformed to a [14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md) with the following structure:
 
 ```protobuf
 syntax = "proto3";
@@ -207,7 +192,7 @@ message WakuMessage {
 
 ### Pubsub topics and sharding
 
-All Waku messages are published to pubsub topics as defined in [23/WAKU2-TOPICS](../../../messaging/informational/23/topics.md).
+All Waku messages are published to pubsub topics as defined in [23/WAKU2-TOPICS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/23/topics.md).
 Since pubsub topics define a routing layer for messages,
 they can be used to shard traffic.
 The pubsub topic used for publishing a message depends on the app-level [functional scope](#functional-scope).
@@ -264,14 +249,14 @@ useful for the user functions specific to that instance of the application.
 The specific Waku discovery protocol used for discovery depends on the use case and resource-availability of the client.
 
 1. [EIP-1459: DNS-based discovery](https://eips.ethereum.org/EIPS/eip-1459) is useful for initial connection to bootstrap peers.
-2. [33/WAKU2-DISCV5](../../../messaging/standards/core/33/discv5.md) allows decentralized discovery of Waku peers.
+2. [33/WAKU2-DISCV5](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/33/discv5.md) allows decentralized discovery of Waku peers.
 3. [34/WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/315264c202e0973476e2f1e2d0b01bea4fe1ad31/standards/core/peer-exchange.md) allows requesting peers from a service node
 and is appropriate for resource-restricted discovery.
 
 All clients SHOULD use DNS-based discovery on startup
 to discover a set of bootstrap peers for initial connection.
 
-Full clients SHOULD use [33/WAKU2-DISCV5](../../../messaging/standards/core/33/discv5.md) for continuous ambient peer discovery.
+Full clients SHOULD use [33/WAKU2-DISCV5](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/33/discv5.md) for continuous ambient peer discovery.
 
 Light clients SHOULD use [34/WAKU2-PEER-EXCHANGE](https://github.com/waku-org/specs/blob/315264c202e0973476e2f1e2d0b01bea4fe1ad31/standards/core/peer-exchange.md) to discover a set of service peers
 used by that instance of the application.
@@ -283,8 +268,8 @@ and to enable the user functions specific to that instance of the application.
 
 The specific Waku protocol used for subscription depends on the resource-availability of the client:
 
-1. Filter client protocol, as specified in [12/WAKU2-FILTER](../../../messaging/standards/core/12/filter.md), allows subscribing for traffic with content topic granularity and is appropriate for resource-restricted subscriptions.
-2. Relay protocol, as specified in [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md), allows subscribing to traffic only with pubsub topic granularity and therefore is more resource-intensive. Relay subscription also allows the application instance to contribute to the overall routing infrastructure, which adds to its overall higher resource usage but benefits the ecosystem.
+1. Filter client protocol, as specified in [12/WAKU2-FILTER](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/12/filter.md), allows subscribing for traffic with content topic granularity and is appropriate for resource-restricted subscriptions.
+2. Relay protocol, as specified in [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md), allows subscribing to traffic only with pubsub topic granularity and therefore is more resource-intensive. Relay subscription also allows the application instance to contribute to the overall routing infrastructure, which adds to its overall higher resource usage but benefits the ecosystem.
 
 Full clients SHOULD use relay protocol as preferred method to subscribe to pubsub topics matching the scopes:
 
@@ -310,8 +295,8 @@ See [Large messages](#large-messages-4).
 The application MUST publish user and app generated messages via the Waku transport layer.
 The specific Waku protocol used for publishing depends on the resource-availability of the client:
 
-1. Lightpush protocol, as specified in [19/WAKU2-LIGHTPUSH](../../../messaging/standards/core/19/lightpush.md) allows publishing to a pubsub topic via an intermediate "full node" and is more appropriate for resource-restricted publishing.
-2. Relay protocol, as specified in [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md), allows publishing directly into the relay routing network and is therefore more resource-intensive.
+1. Lightpush protocol, as specified in [19/WAKU2-LIGHTPUSH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/19/lightpush.md) allows publishing to a pubsub topic via an intermediate "full node" and is more appropriate for resource-restricted publishing.
+2. Relay protocol, as specified in [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md), allows publishing directly into the relay routing network and is therefore more resource-intensive.
 
 Full clients SHOULD use relay protocol to publish to pubsub topics matching the scopes:
 
@@ -370,8 +355,8 @@ See [Large messages](#large-messages-4).
 Status clients MAY provide service-side protocols to other clients.
 
 Full clients SHOULD mount
-the filter service protocol (see [12/WAKU2-FILTER](../../../messaging/standards/core/12/filter.md))
-and lightpush service protocol (see [19/WAKU2-LIGHTPUSH](../../../messaging/standards/core/19/lightpush.md))
+the filter service protocol (see [12/WAKU2-FILTER](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/12/filter.md))
+and lightpush service protocol (see [19/WAKU2-LIGHTPUSH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/19/lightpush.md))
 in order to provide light subscription and publishing services to other clients
 for each pubsub topic to which they have a relay subscription.
 
@@ -407,7 +392,7 @@ Status clients (full or light) SHOULD use store queries (rather than subscriptio
 The Status application MAY use a chunking mechanism to break down large payloads
 into smaller segments for individual Waku transport.
 The definition of a large message is up to the application.
-However, the maximum size for a [14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md) payload is 150KB.
+However, the maximum size for a [14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md) payload is 150KB.
 Status application payloads that exceed this size MUST be chunked into smaller pieces
 and MUST be considered a "large message".
 
@@ -419,12 +404,12 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 
 1. [55/STATUS-1TO1-CHAT](../55/1to1-chat.md)
 2. [56/STATUS-COMMUNITIES](../56/communities.md)
-3. [10/WAKU2](../../../messaging/standards/core/10/waku2.md)
-4. [11/WAKU2-RELAY](../../../messaging/standards/core/11/relay.md)
-5. [12/WAKU2-FILTER](../../../messaging/standards/core/12/filter.md)
-6. [14/WAKU2-MESSAGE](../../../messaging/standards/core/14/message.md)
-7. [23/WAKU2-TOPICS](../../../messaging/informational/23/topics.md)
-8. [19/WAKU2-LIGHTPUSH](../../../messaging/standards/core/19/lightpush.md)
+3. [10/WAKU2](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/10/waku2.md)
+4. [11/WAKU2-RELAY](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/11/relay.md)
+5. [12/WAKU2-FILTER](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/12/filter.md)
+6. [14/WAKU2-MESSAGE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/14/message.md)
+7. [23/WAKU2-TOPICS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/informational/23/topics.md)
+8. [19/WAKU2-LIGHTPUSH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/19/lightpush.md)
 9. [Scalable distributed log reliability](https://forum.vac.dev/t/end-to-end-reliability-for-scalable-distributed-logs/293/16)
-10. [STATUS-MVDS-USAGE](status-mvds.md)
+10. [STATUS-MVDS-USAGE](./status-mvds.md)
 11. [WAKU2-STORE](https://github.com/waku-org/specs/blob/8fea97c36c7bbdb8ddc284fa32aee8d00a2b4467/standards/core/store.md)

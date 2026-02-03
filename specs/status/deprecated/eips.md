@@ -1,25 +1,12 @@
-# EIPS
-
-| Field | Value |
-| --- | --- |
-| Name | EIPS |
-| Slug | 128 |
-| Status | deprecated |
-| Editor | Ricardo Guilherme Schmidt <ricardo3@status.im> |
-| Contributors | None |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/eips.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/eips.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/eips.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/eips.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/eips.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/eips.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: EIPS
+name: EIPS
+status: deprecated
+description: Status relation with the EIPs
+editor: Ricardo Guilherme Schmidt <ricardo3@status.im>
+contributors:
+- 
+---
 
 ## Abstract
 
@@ -88,7 +75,7 @@ Support: Dependency.
 [Reference](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)
 Description: Enable wallet to derive multiple accounts in top of BIP39.  
 Used for: Privacy.  
-[Source code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/constants.cljs#L240)
+[Source code](https://github.com/status-im/status-legacy/blob/develop/src/status_im/constants.cljs#L240)
 Observation: BIP44 don't solve privacy issues regarding the transparency of transactions, therefore directly connected addresses through a transactions can be identifiable by a "network reconnaissance attack" over transaction history, this attack together with leakage of information from centralized services, such as exchanges, would be fatal against the whole privacy of users, regardless of BIP44.  
 
 ### EIP20 - Fungible Token
@@ -97,7 +84,7 @@ Support: Full.
 [Reference](https://eips.ethereum.org/EIPS/eip-20)
 Description: Enable wallets to use tokens based on smart contracts compliant with this standard.  
 Used for: Wallet feature.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/tokens.cljs)  
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/tokens.cljs)  
 
 ### EIP55 - Mixed-case checksum address encoding
 
@@ -106,7 +93,7 @@ Support: Full.
 Description: Checksum standard that uses lowercase and uppercase inside address hex value.  
 Used for: Sanity check of forms using ethereum address.  
 [Related](https://github.com/status-im/status-mobile/issues/4959) [Also](https://github.com/status-im/status-mobile/issues/8707)
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip55.cljs)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/utils/ethereum/eip/eip55.cljs)
 
 ### EIP67 - Standard URI scheme with metadata, value and byte code
 
@@ -122,7 +109,7 @@ Support: Partial.
 [Reference](https://eips.ethereum.org/EIPS/eip-137)
 Description: Enable wallets to lookup ENS names.  
 Used for: User experience, as a wallet and identity feature, usernames.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/ens.cljs#L86)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/ens.cljs)
 
 ### EIP155 - Simple replay attack protection
 
@@ -130,7 +117,7 @@ Support: Full.
 [Reference](https://eips.ethereum.org/EIPS/eip-155)
 Description: Defined chainId parameter in the singed ethereum transaction payload.  
 Used for: Signing transactions, crucial to safety of users against replay attacks.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/core.cljs)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/transactions/core.cljs)
 
 ### EIP165 - Standard Interface Detection
 
@@ -138,7 +125,6 @@ Support: Dependency/Partial.
 [Reference](https://eips.ethereum.org/EIPS/eip-165)
 Description: Standard interface for contract to answer if it supports other interfaces.  
 Used for: Dependency of ENS and EIP721.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip165.cljs)
 
 ### EIP181 - ENS support for reverse resolution of Ethereum addresses
 
@@ -146,7 +132,7 @@ Support: Partial.
 [Reference](https://eips.ethereum.org/EIPS/eip-181)
 Description: Enable wallets to render reverse resolution of Ethereum addresses.  
 Used for: Wallet feature.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/ens.cljs#L86)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/ens.cljs)
 
 ### EIP191 - Signed Message
 
@@ -168,7 +154,7 @@ Support: Partial.
 [Reference](https://eips.ethereum.org/EIPS/eip-681)
 Description: A link that pop up a transaction in the wallet.  
 Used for: Useful as QR code data for transaction requests, chat transaction requests and for dapp links to transaction requests.  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip681.cljs)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/utils/ethereum/eip/eip681.cljs)
 Related: [Issue #9183: URL Format for Transaction Requests (EIP681) is poorly supported](https://github.com/status-im/status-mobile/issues/9183) [Issue #9240](https://github.com/status-im/status-mobile/pull/9240) [Issue #9238](https://github.com/status-im/status-mobile/issues/9238) [Issue #7214](https://github.com/status-im/status-mobile/issues/7214) [Issue #7325](https://github.com/status-im/status-mobile/issues/7325) [Issue #8150](https://github.com/status-im/status-mobile/issues/8150)
 
 ### EIP712 - Typed Signed Message
@@ -186,7 +172,7 @@ Support: Partial.
 Description: Enable wallets to use tokens based on smart contracts compliant with this standard.  
 Used for: Wallet feature.  
 Related: [Issue #8909](https://github.com/status-im/status-mobile/issues/8909)
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/erc721.cljs) [Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/tokens.cljs)  
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/tokens.cljs)  
 
 ### EIP945 - Web 3 QR Code Scanning API
 
@@ -218,7 +204,7 @@ Support: Partial.
 Description: Allows users browse ENS domains using contenthash standard.  
 Used for: Browser, DApp support.  
 Related: [Isse #6688](https://github.com/status-im/status-mobile/issues/6688)
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/utils/contenthash.cljs) [Sourcecode](https://github.com/status-im/status-mobile/blob/develop/test/cljs/status_im/test/utils/contenthash.cljs#L5)  
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/browser/core.cljs)  
 
 ### EIP1581 - Non-wallet usage of keys derived from BIP-32 trees
 
@@ -227,7 +213,7 @@ Support: Partial.
 Description: Allow wallet to derive keys that are less sensible (non wallet).  
 Used for: Security (don't reuse wallet key) and user experience (don't request keycard every login).  
 Related: [Issue #9096](https://github.com/status-im/status-mobile/issues/9088) [Issue #9096](https://github.com/status-im/status-mobile/pull/9096)  
-[Sourcecode](https://github.com/status-im/status-mobile/blob/develop/src/status_im/constants.cljs#L242)
+[Sourcecode](https://github.com/status-im/status-legacy/blob/develop/src/status_im/constants.cljs#L242)
 
 ### EIP1459 - Node Discovery via DNS
 
@@ -248,27 +234,26 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [BIP39 - Mnemonic code for generating deterministic keys](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 - [BIP43 - Purpose Field for Deterministic Wallets](https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki)
 - [BIP44 - Multi-Account Hierarchy for Deterministic Wallets](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)
-- [BIP44 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/constants.cljs#L240)
+- [BIP44 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/status_im/constants.cljs#L240)
 - [EIP20 - Fungible Token](https://eips.ethereum.org/EIPS/eip-20)
-- [EIP20 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/tokens.cljs)
+- [EIP20 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/tokens.cljs)
 - [EIP55 - Mixed-case checksum address encoding](https://eips.ethereum.org/EIPS/eip-55)
 - [EIP55 Related Issue 4959](https://github.com/status-im/status-mobile/issues/4959)
 - [EIP55 Related Issue 8707](https://github.com/status-im/status-mobile/issues/8707)
-- [EIP55 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip55.cljs)
+- [EIP55 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/utils/ethereum/eip/eip55.cljs)
 - [EIP67 - Standard URI scheme with metadata, value and byte code](https://github.com/ethereum/EIPs/issues/67)
 - [EIP67 Related Issue 875](https://github.com/status-im/status-mobile/issues/875)
 - [EIP137 - Ethereum Domain Name Service - Specification](https://eips.ethereum.org/EIPS/eip-137)
-- [EIP137 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/ens.cljs#L86)
+- [EIP137 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/ens.cljs)
 - [EIP155 - Simple replay attack protection](https://eips.ethereum.org/EIPS/eip-155)
-- [EIP155 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/core.cljs)
+- [EIP155 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/transactions/core.cljs)
 - [EIP165 - Standard Interface Detection](https://eips.ethereum.org/EIPS/eip-165)
-- [EIP165 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip165.cljs)
 - [EIP181 - ENS support for reverse resolution of Ethereum addresses](https://eips.ethereum.org/EIPS/eip-181)
-- [EIP181 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/ens.cljs#L86)
+- [EIP181 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/ens.cljs)
 - [EIP191 - Signed Message](https://eips.ethereum.org/EIPS/eip-191)
 - [EIP627 - Whisper Specification](https://eips.ethereum.org/EIPS/eip-627)
 - [EIP681 - URL Format for Transaction Requests](https://eips.ethereum.org/EIPS/eip-681)
-- [EIP681 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/eip681.cljs)
+- [EIP681 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/utils/ethereum/eip/eip681.cljs)
 - [EIP681 Related Issue 9183](https://github.com/status-im/status-mobile/issues/9183)
 - [EIP681 Related Issue 9240](https://github.com/status-im/status-mobile/pull/9240)
 - [EIP681 Related Issue 9238](https://github.com/status-im/status-mobile/issues/9238)
@@ -280,8 +265,7 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [EIP712 Related Commit](https://github.com/status-im/status-mobile/commit/ba37f7b8d029d3358c7b284f6a2383b9ef9526c9)
 - [EIP721 - Non Fungible Token](https://eips.ethereum.org/EIPS/eip-721)
 - [EIP721 Related Issue 8909](https://github.com/status-im/status-mobile/issues/8909)
-- [EIP721 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/erc721.cljs)
-- [EIP721 Source Code (Tokens)](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/tokens.cljs)
+- [EIP721 Source Code (Tokens)](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/tokens.cljs)
 - [EIP945 - Web 3 QR Code Scanning API](https://github.com/ethereum/EIPs/issues/945)
 - [EIP945 Related Issue 5870](https://github.com/status-im/status-mobile/issues/5870)
 - [EIP1102 - Opt-in account exposure](https://eips.ethereum.org/EIPS/eip-1102)
@@ -290,10 +274,9 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 - [EIP1193 Related Issue 7246](https://github.com/status-im/status-mobile/pull/7246)
 - [EIP1577 - contenthash field for ENS](https://eips.ethereum.org/EIPS/eip-1577)
 - [EIP1577 Related Issue 6688](https://github.com/status-im/status-mobile/issues/6688)
-- [EIP1577 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/utils/contenthash.cljs)
-- [EIP1577 Test Source Code](https://github.com/status-im/status-mobile/blob/develop/test/cljs/status_im/test/utils/contenthash.cljs#L5)
+- [EIP1577 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/browser/core.cljs)
 - [EIP1581 - Non-wallet usage of keys derived from BIP-32 trees](https://eips.ethereum.org/EIPS/eip-1581)
 - [EIP1581 Related Issue 9088](https://github.com/status-im/status-mobile/issues/9088)
 - [EIP1581 Related Issue 9096](https://github.com/status-im/status-mobile/pull/9096)
-- [EIP1581 Source Code](https://github.com/status-im/status-mobile/blob/develop/src/status_im/constants.cljs#L242)
+- [EIP1581 Source Code](https://github.com/status-im/status-legacy/blob/develop/src/status_im/constants.cljs#L242)
 - [EIP1459 - Node Discovery via DNS](https://eips.ethereum.org/EIPS/eip-1459)

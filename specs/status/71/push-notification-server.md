@@ -1,30 +1,14 @@
-# 71/STATUS-PUSH-NOTIFICATION-SERVER
-
-| Field | Value |
-| --- | --- |
-| Name | Push Notification Server |
-| Slug | 71 |
-| Status | draft |
-| Category | Standards Track |
-| Editor | Jimmy Debe <jimmy@status.im> |
-| Contributors | Andrea Maria Piana <andreap@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-16** — [`f01d5b9`](https://github.com/vacp2p/rfc-index/blob/f01d5b9d9f2ef977b8c089d616991b24f2ee4efe/docs/archived/status/71/push-notification-server.md) — chore: fix links (#260)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/71/push-notification-server.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/71/push-notification-server.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/71/push-notification-server.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/71/push-notification-server.md) — ci: add mdBook configuration (#233)
-- **2024-09-13** — [`3ab314d`](https://github.com/vacp2p/rfc-index/blob/3ab314d87d4525ff1296bf3d9ec634d570777b91/status/71/push-notification-server.md) — Fix Files for Linting (#94)
-- **2024-02-07** — [`3e21cc0`](https://github.com/vacp2p/rfc-index/blob/3e21cc0aabe72b00bf2e6ce51ed889e929e4a047/status/71/push-notification-server.md) — Update push-notification-server.md
-- **2024-02-05** — [`5bce327`](https://github.com/vacp2p/rfc-index/blob/5bce32702ae3dcb1c05f491804a745724533db7e/status/71/push-notification-server.md) — Update push-notification-server.md
-- **2024-02-02** — [`8df3f00`](https://github.com/vacp2p/rfc-index/blob/8df3f006cf6a9dd64c3cfa8c99256330cc696df7/status/71/push-notification-server.md) — Update and rename PUSH-NOTIFICATIONS.md to push-notification-server.md
-- **2024-01-27** — [`eb7c5bf`](https://github.com/vacp2p/rfc-index/blob/eb7c5bf71edd47cf0b5d0f0919013cdea17c4f43/status/71/PUSH-NOTIFICATIONS.md) — Create PUSH-NOTIFICATIONS.md
-
-<!-- timeline:end -->
+---
+slug: 71
+title: 71/STATUS-PUSH-NOTIFICATION-SERVER
+name: Push Notification Server
+status: draft
+category: Standards Track
+description: A set of methods to allow Status clients to use push notification services in mobile environments.
+editor: Jimmy Debe <jimmy@status.im>
+contributors: 
+  - Andrea Maria Piana <andreap@status.im>
+---
 
 ## Abstract
 
@@ -69,7 +53,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”,
 | client | A node that implements the Status specifications. |
 | user | The owner of a device that runs a client. |
 | server | A service that performs push notifications. |
-| Waku-Store | A Waku node that decides to provide functionality to store messages permanently and deliver the messages to requesting clients. As described in [13/WAKU-STORE](../../../messaging/standards/core/13/store.md) specification.|
+| Waku-Store | A Waku node that decides to provide functionality to store messages permanently and deliver the messages to requesting clients. As described in [13/WAKU-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md) specification.|
 
 ### Server Components
 
@@ -92,11 +76,11 @@ The party releasing the app MUST run its own [gorush](https://github.com/applebo
 
 #### Registration Process
 
-![registration](images/registration.png)
+![registration](./images/registration.png)
 
 #### Sending and Receiving Notification Process
 
-![notification](images/notification.png)
+![notification](./images/notification.png)
 
 ### Registering Client
 
@@ -109,7 +93,7 @@ more push notification services in order to increase availability.
 have the same information about their tokens.
 
 - A `PNR message` (Push Notification Registration) MUST be sent to the
-[partitioned topic](../../../messaging/standards/application/54/x3dh-sessions.md)
+[partitioned topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 for the public key of the node, encrypted with this key.
 
 - The message MUST be wrapped in a
@@ -190,7 +174,7 @@ message PushNotificationRegistrationResponse {
 ```
 
 A client SHOULD listen for a response sent on the
-[partitioned topic](../../../messaging/standards/application/54/x3dh-sessions.md)
+[partitioned topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 that the key used to register.
 If success is true the client has registered successfully.
 
@@ -222,7 +206,7 @@ a response MUST be sent with `success` set to `false`.
 of the encrypted payload.
 
 - The response MUST be sent on the
-[partitioned topic](../../../messaging/standards/application/54/x3dh-sessions.md)
+[partitioned topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 of the sender and MUST not be encrypted using
 the secure transport to facilitate the usage of ephemeral keys.
 
@@ -306,7 +290,7 @@ message ContactCodeAdvertisement {
 the access token SHOULD be included in the advertisement.
   Otherwise it SHOULD be left empty.
 - This SHOULD be advertised on the
-[contact code topic](../../../messaging/standards/application/53/x3dh.md) and
+[contact code topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md) and
 SHOULD be coupled with normal contact-code advertisement.
 - When a user register or re-register with a push notification service,
 their contact-code SHOULD be re-advertised.
@@ -316,7 +300,7 @@ their contact-code SHOULD be re-advertised.
 #### Discovering a Server
 
 To discover a push notification service for a given user, their
-[contact code topic](../../../messaging/standards/application/53/x3dh.md)
+[contact code topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 SHOULD be listened to.
 A Waku-Store node can be queried for the specific topic
 to retrieve the most up-to-date contact code.
@@ -342,7 +326,7 @@ message PushNotificationQuery {
 - it MUST be sent to the server on the topic derived from the hashed public key
 of the key we are querying,
 [as described above](#query-topic).
-- An ephemeral key SHOULD be used and SHOULD NOT be encrypted using the [secure transport](../../../messaging/standards/application/53/x3dh.md).
+- An ephemeral key SHOULD be used and SHOULD NOT be encrypted using the [secure transport](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md).
 
 If the server has information about the client a response MUST be sent:
 
@@ -388,10 +372,10 @@ it will return a valid `uuid` which is what is used for access_token.
 The token SHOULD be used to send push notifications.
 
 - The response MUST be sent on the
-[partitioned topic](../../../messaging/standards/application/54/x3dh-sessions.md)
+[partitioned topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 of the sender and
 MUST NOT be encrypted using the
-[secure transport](../../../messaging/standards/application/53/x3dh.md)
+[secure transport](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 to facilitate the usage of ephemeral keys.
 
 - On receiving a response,
@@ -516,10 +500,10 @@ Where `message_id` is the `message_id` sent by the client.
 [`ApplicationMetadataMessage`](../62/payloads.md) with type set to `PUSH_NOTIFICATION_RESPONSE`.
 
 - The response MUST be sent on the
-[partitioned topic](../../../messaging/standards/application/54/x3dh-sessions.md)
+[partitioned topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 of the sender and
 MUST not be encrypted using the
-[secure transport](../../../messaging/standards/application/53/x3dh.md)
+[secure transport](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 to facilitate the usage of ephemeral keys.
 
 - If the request is accepted `success` MUST be set to `true`.
@@ -685,7 +669,7 @@ This will hide their real chat key. This public key is effectively a secret and
 SHOULD only be disclosed to clients approved to notify a user.
 
 - A client MAY advertise the access token on the
-[contact-code topic](../../../messaging/standards/application/53/x3dh.md)
+[contact-code topic](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)
 of the key generated.
 
 - A client MAY share their public key contact updates in the
@@ -734,10 +718,10 @@ Copyright and related rights waived via [CC0](https://creativecommons.org/public
 1. [PUSH-NOTIFICATION-SERVER, Initial Specification](https://github.com/status-im/specs/blob/master/docs/raw/push-notification-server.md)
 2. [Push Notification, Apple Developer](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)
 3. [Firebase](https://firebase.google.com)
-4. [13/WAKU2-STORE](../../../messaging/standards/core/13/store.md)
+4. [13/WAKU2-STORE](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/core/13/store.md)
 5. [gorush](https://github.com/appleboy/gorush)
-6. [54/WAKU2-X3DH-SESSIONS](../../../messaging/standards/application/54/x3dh-sessions.md)
+6. [54/WAKU2-X3DH-SESSIONS](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/54/x3dh-sessions.md)
 7. [62/PAYLOAD](../62/payloads.md)
 8. [SHAKE-256](https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.202.pdf)
 9. [Protocol Buffers](https://developers.google.com/protocol-buffers)
-10. [53/WAKU2-X3DH](../../../messaging/standards/application/53/x3dh.md)
+10. [53/WAKU2-X3DH](https://github.com/vacp2p/rfc-index/tree/master/docs/messaging/standards/application/53/x3dh.md)

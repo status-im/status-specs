@@ -1,25 +1,12 @@
-# ETHEREUM-USAGE
-
-| Field | Value |
-| --- | --- |
-| Name | Status interactions with the Ethereum blockchain |
-| Slug | 125 |
-| Status | deprecated |
-| Editor | Filip Dimitrijevic <filip@status.im> |
-| Contributors | Andrea Maria Piana <andreap@status.im> |
-
-<!-- timeline:start -->
-
-## Timeline
-
-- **2026-01-19** — [`f24e567`](https://github.com/vacp2p/rfc-index/blob/f24e567d0b1e10c178bfa0c133495fe83b969b76/docs/archived/status/deprecated/ethereum-usage.md) — Chore/updates mdbook (#262)
-- **2026-01-16** — [`89f2ea8`](https://github.com/vacp2p/rfc-index/blob/89f2ea89fc1d69ab238b63c7e6fb9e4203fd8529/docs/archived/status/deprecated/ethereum-usage.md) — Chore/mdbook updates (#258)
-- **2025-12-22** — [`0f1855e`](https://github.com/vacp2p/rfc-index/blob/0f1855edcf68ef982c4ce478b67d660809aa9830/docs/status/deprecated/ethereum-usage.md) — Chore/fix headers (#239)
-- **2025-12-22** — [`b1a5783`](https://github.com/vacp2p/rfc-index/blob/b1a578393edf8487ccc97a5f25b25af9bf41efb3/docs/status/deprecated/ethereum-usage.md) — Chore/mdbook updates (#237)
-- **2025-12-18** — [`d03e699`](https://github.com/vacp2p/rfc-index/blob/d03e699084774ebecef9c6d4662498907c5e2080/docs/status/deprecated/ethereum-usage.md) — ci: add mdBook configuration (#233)
-- **2025-04-29** — [`614348a`](https://github.com/vacp2p/rfc-index/blob/614348a4982aa9e519ccff8b8fbcd4c554683288/status/deprecated/ethereum-usage.md) — Status deprecated update2 (#134)
-
-<!-- timeline:end -->
+---
+title: ETHEREUM-USAGE
+name: Status interactions with the Ethereum blockchain
+status: deprecated
+description: All interactions that the Status client has with the Ethereum blockchain.
+editor: Filip Dimitrijevic <filip@status.im>
+contributors:
+    - Andrea Maria Piana <andreap@status.im>
+---
 
 ## Abstract
 
@@ -28,14 +15,14 @@ with the [Ethereum](https://ethereum.org/developers/) blockchain.
 
 ## Background
 
-All the interactions are made through [JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC).
-Currently [Infura](https://infura.io/) is used.
+All the interactions are made through [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/).
+Currently [Infura](https://docs.metamask.io/services/) is used.
 The client assumes high-availability,
 otherwise it will not be able to interact with the Ethereum blockchain.
 Status nodes rely on these Infura nodes
 to validate the integrity of the transaction and report a consistent history.
 
-Key handling is described [here](/archived/status/deprecated/account.md)
+Key handling is described [here](account.md)
 
 1. [Wallet](#wallet)
 2. [ENS](#ens)
@@ -123,7 +110,7 @@ func (ec *Client) SendTransaction(ctx context.Context, tx *types.Transaction) er
 A Status node fetches the current and historical [ECR20](https://eips.ethereum.org/EIPS/eip-20) and ETH balance for the user wallet address.
 Collectibles following the [ERC-721](https://eips.ethereum.org/EIPS/eip-721) are also fetched if enabled.
 
-A Status node supports by default the following [tokens](https://github.com/status-im/status-mobile/blob/develop/src/status_im/ethereum/tokens.cljs). Custom tokens can be added by specifying the `address`, `symbol` and `decimals`.
+A Status node supports by default the following [tokens](https://github.com/status-im/status-legacy/blob/develop/src/legacy/status_im/ethereum/tokens.cljs). Custom tokens can be added by specifying the `address`, `symbol` and `decimals`.
 
 #### BlockByHash
 
@@ -230,7 +217,7 @@ Usernames MUST be in a specific format, otherwise they MAY be slashed:
 - [Slash a username too similar to an address](https://github.com/status-im/ens-usernames/blob/77d9394d21a5b6213902473b7a16d62a41d9cd09/contracts/registry/UsernameRegistrar.sol#L215)
 - [Slash a username that is too short](https://github.com/status-im/ens-usernames/blob/77d9394d21a5b6213902473b7a16d62a41d9cd09/contracts/registry/UsernameRegistrar.sol#L200)
 
-ENS names are propagated through `ChatMessage` and `ContactUpdate` [payload](/archived/status/deprecated/payloads.md).
+ENS names are propagated through `ChatMessage` and `ContactUpdate` [payload](payloads.md).
 A client SHOULD verify ens names against the public key of the sender on receiving the message against the [ENS contract](https://github.com/ensdomains/ens)
 
 ## Copyright
