@@ -1129,20 +1129,20 @@ which might break compatibility
 
 ### Version 0.5
 
-Released August 25, 2020
+Released [August 25, 2020](https://github.com/status-im/specs/commit/968fafff23cdfc67589b34dd64015de29aaf41f0)
 
 * Added support for emoji reactions
 
 ### Version 0.4
 
-Released July 16, 2020
+Released [July 16, 2020](https://github.com/status-im/specs/commit/ad45cd5fed3c0f79dfa472253a404f670dd47396)
 
 * Added support for images
 * Added support for audio
 
 ### Version 0.3
 
-Released May 22, 2020
+Released [May 22, 2020](https://github.com/status-im/specs/commit/664dd1c9df6ad409e4c007fefc8c8945b8d324e8)
 
 * Added language to include Waku in all relevant places
 

@@ -113,8 +113,7 @@ message MembershipUpdateMessage {
   // chat_id = hex(chat_creator_public_key) + "-" + random_uuid
   // This chat_id MUST be validated by all participants
   string chat_id = 1;
-  // A list of events for this group chat, first 65 bytes are the signature, 
-  then is a 
+  // A list of events for this group chat, first 65 bytes are the signature, then is a 
   // protobuf encoded MembershipUpdateEvent
   repeated bytes events = 2;
   oneof chat_entity {

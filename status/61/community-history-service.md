@@ -225,7 +225,7 @@ This is needed for seamless encoding and
 decoding of archival data in interation with BitTorrent,
 as explained in [creating message archive torrents](#creating-message-archive-torrents).
 
-```protobuf
+```
 syntax = "proto3"
 
 message WakuMessageArchiveMetadata {
