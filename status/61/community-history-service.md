@@ -289,7 +289,7 @@ more `WakuMessageArchive`s and bundle it into a new torrent.
 For every created `WakuMessageArchive`,
 there MUST be a `WakuMessageArchiveIndexMetadata` entry in the `archives` field `WakuMessageArchiveIndex`.
 
-## Creating message archive torrents
+# Creating message archive torrents
 
 Control nodes MUST create a torrent file ("torrent")
 containing metadata to all message history archives.
