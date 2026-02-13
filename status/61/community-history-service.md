@@ -225,7 +225,7 @@ This is needed for seamless encoding and
 decoding of archival data in interation with BitTorrent,
 as explained in [creating message archive torrents](#creating-message-archive-torrents).
 
-```protobuf
+```
 syntax = "proto3"
 
 message WakuMessageArchiveMetadata {
@@ -289,7 +289,7 @@ more `WakuMessageArchive`s and bundle it into a new torrent.
 For every created `WakuMessageArchive`,
 there MUST be a `WakuMessageArchiveIndexMetadata` entry in the `archives` field `WakuMessageArchiveIndex`.
 
-## Creating message archive torrents
+# Creating message archive torrents
 
 Control nodes MUST create a torrent file ("torrent")
 containing metadata to all message history archives.

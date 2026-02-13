@@ -45,7 +45,7 @@ sign transactions.
 To initialize the keycard for use with the application.
 The keycard is locked with a 6 digit pin.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -53,7 +53,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 {
@@ -70,7 +70,7 @@ The application SHOULD provide a way to recover the keycard in case the pin is f
 
 To fetch if the keycard is ready to be used by the application.
 
-Request wire format
+### Request wire format
 
 The requester MAY add a `pairing` field to filter through the generated keys
 
@@ -80,7 +80,7 @@ The requester MAY add a `pairing` field to filter through the generated keys
 }
 ```
 
-Response wire format
+### Response wire format
 
 #### If the keycard is not initialized yet
 
@@ -110,7 +110,7 @@ Response wire format
 To establish a secure communication channel described [here](https://keycard.tech/docs/apdu/opensecurechannel),
 the keycard and the client device need to be paired.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -118,7 +118,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 "<shared_secret>/<pairing_index>/<256_bit_salt>"
@@ -128,7 +128,7 @@ Response wire format
 
 To generate a new set of keys and load them onto the keycard.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -138,7 +138,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 {
@@ -161,7 +161,7 @@ Response wire format
 
 To fetch the keys that are currently loaded on the keycard.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -170,7 +170,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 {
@@ -194,7 +194,7 @@ Response wire format
 To sign a transaction using the keycard, passing in the pairing information and
 the transaction to be signed.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -205,7 +205,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 <256_bit_signature>
@@ -216,7 +216,7 @@ Response wire format
 To export a key from the keycard, passing in the pairing information and
 the path to the key to be exported.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -226,7 +226,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 <256_bit_public_key>
@@ -236,7 +236,7 @@ Response wire format
 
 To verify the pin of the keycard.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -244,7 +244,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 ```json
 1_digit_status_code
@@ -259,7 +259,7 @@ Status code reference:
 
 To change the pin of the keycard.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -269,7 +269,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 #### If the operation was successful
 
@@ -288,7 +288,7 @@ false
 If the Keycard is blocked due to too many incorrect pin attempts,
 it can be unblocked using the PUK.
 
-Request wire format
+### Request wire format
 
 ```json
 {
@@ -298,7 +298,7 @@ Request wire format
 }
 ```
 
-Response wire format
+### Response wire format
 
 If the operation was successful
 
